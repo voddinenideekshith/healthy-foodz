@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Healthy Foodz — fresh, natural and healthy meals delivered in Hayath Nagar Khalsa, Hyderabad. Order via WhatsApp, phone, Swiggy or Zomato." />
+    <title>Healthy Foodz — Fresh • Natural • Healthy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="theme-color" content="#ECF9F0">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <h1>Healthy Foodz</h1>
+          <p class="tag">Fresh • Natural • Healthy</p>
+        </div>
+        <nav class="top-actions">
+          <a href="#menu" class="btn btn-ghost">View Menu</a>
+          <a href="#" id="callBtn" class="btn btn-outline">Call to Order</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h2 class="headline">Healthy Food, Made Fresh Every Day</h2>
+            <p class="lead">Nutritious meals &amp; drinks delivered fresh to your doorstep</p>
+            <div class="cta-row">
+              <button id="whatsappOrder" class="btn btn-primary">Order on WhatsApp</button>
+              <a href="#menu" class="btn btn-secondary">View Menu</a>
+            </div>
+            <ul class="meta">
+              <li><strong>Location:</strong> Hayath Nagar Khalsa, 501505, Hyderabad, Telangana</li>
+              <li><strong>Service Area:</strong> 5 KM radius</li>
+            </ul>
+          </div>
+          <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Fresh healthy food" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu section">
+        <div class="container">
+          <h3 class="section-title">Menu</h3>
+          <p class="section-sub">Fresh, natural and carefully prepared combinations.</p>
+          <div id="menuGrid" class="menu-grid">
+            <!-- Menu cards injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="ordering-platforms section">
+        <div class="container platforms-inner">
+          <h4>Ordering Platforms</h4>
+          <div class="platform-list">
+            <a class="platform" href="#" aria-label="Swiggy">
+              <img src="https://seeklogo.com/images/S/swiggy-logo-5EC8A90B0B-seeklogo.com.png" alt="Swiggy" loading="lazy">
+            </a>
+            <a class="platform" href="#" aria-label="Zomato">
+              <img src="https://seeklogo.com/images/Z/zomato-logo-9892D87DE0-seeklogo.com.png" alt="Zomato" loading="lazy">
+            </a>
+            <div class="platform direct">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+                <path d="M12 2L12 22" stroke="#2F855A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L22 12" stroke="#2F855A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Direct Delivery (up to 5 KM)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section">
+        <div class="container">
+          <h4>About Healthy Foodz</h4>
+          <p>Healthy Foodz is a cloud kitchen dedicated to providing fresh, nutritious, and hygienic food made with natural ingredients. We focus on health, taste, and quality—delivered fast to your doorstep.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside id="cart" class="cart">
+      <div class="cart-header">
+        <h5>Your Order</h5>
+        <button id="closeCart" class="btn-close">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total">Total: <span id="cartTotal">₹0</span></div>
+        <div class="cart-actions">
+          <button id="whatsappCheckout" class="btn btn-primary">Order via WhatsApp</button>
+          <button id="emailCheckout" class="btn btn-ghost">Order via Email</button>
+          <a id="callCheckout" href="#" class="btn btn-outline">Call to Order</a>
+        </div>
+      </div>
+    </aside>
+
+    <button id="cartToggle" class="cart-toggle" aria-label="Open cart">🛒<span id="cartCount">0</span></button>
+
+    <a id="floatingWhatsApp" class="floating-whatsapp" href="#" aria-label="WhatsApp order">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="address">
+          <p>Hayath Nagar Khalsa, 501505, Hyderabad, Telangana</p>
+          <p>Service Area: 5 KM radius</p>
+        </div>
+        <div class="footer-right">
+          <div class="contact small">
+            <div>Phone: <a id="footerCall" href="tel:+918985562963">+91 89855 62963</a></div>
+            <div>Email: <a href="mailto:deekshithvoddineni@gmail.com">deekshithvoddineni@gmail.com</a></div>
+          </div>
+          <div class="platform-icons">
+            <img src="https://seeklogo.com/images/S/swiggy-logo-5EC8A90B0B-seeklogo.com.png" alt="Swiggy">
+            <img src="https://seeklogo.com/images/Z/zomato-logo-9892D87DE0-seeklogo.com.png" alt="Zomato">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+          </div>
+          <div class="copyright">© Healthy Foodz</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js" type="module"></script>
+  </body>
+</html>
