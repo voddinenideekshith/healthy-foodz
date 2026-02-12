@@ -45,6 +45,49 @@ function renderMenu(){
   });
 }
 
+// Fly-to-cart animation: clone image and animate to cart toggle
+function animateFlyToCart(card){
+  try{
+    const img = card.querySelector('img');
+    const cartToggle = document.getElementById('cartToggle');
+    if(!img || !cartToggle) return;
+    const imgRect = img.getBoundingClientRect();
+    const cartRect = cartToggle.getBoundingClientRect();
+
+    const fly = img.cloneNode(true);
+    fly.className = 'flying-img';
+    // set initial position/size
+    fly.style.left = imgRect.left + 'px';
+    fly.style.top = imgRect.top + 'px';
+    fly.style.width = imgRect.width + 'px';
+    fly.style.height = imgRect.height + 'px';
+    fly.style.opacity = '1';
+    document.body.appendChild(fly);
+
+    // compute destination delta to center of cart button
+    const fromX = imgRect.left + imgRect.width/2;
+    const fromY = imgRect.top + imgRect.height/2;
+    const toX = cartRect.left + cartRect.width/2;
+    const toY = cartRect.top + cartRect.height/2;
+    const deltaX = toX - fromX;
+    const deltaY = toY - fromY;
+
+    // trigger transform on next frame
+    requestAnimationFrame(()=>{
+      fly.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.18)`;
+      fly.style.opacity = '0.6';
+      fly.style.transitionTimingFunction = 'cubic-bezier(.22,.9,.3,1)';
+    });
+
+    // cleanup and pulse cart
+    fly.addEventListener('transitionend', ()=>{
+      fly.remove();
+      cartToggle.classList.add('pulse');
+      setTimeout(()=> cartToggle.classList.remove('pulse'), 520);
+    }, {once:true});
+  }catch(e){console.error('fly animation error', e)}
+}
+
 function saveCart(){localStorage.setItem('hf_cart', JSON.stringify(cart));}
 
 function addToCart(id){
@@ -144,7 +187,11 @@ function init(){
   const fw = document.querySelector('.floating-whatsapp'); if(fw) fw.classList.add('bounce');
 
   document.getElementById('menuGrid').addEventListener('click', e=>{
-    const btn = e.target.closest('.add'); if(!btn) return; addToCart(btn.dataset.id);
+    const btn = e.target.closest('.add'); if(!btn) return;
+    const card = btn.closest('.card');
+    // perform a quick fly-to-cart animation
+    animateFlyToCart(card);
+    addToCart(btn.dataset.id);
   });
 
   document.getElementById('cartToggle').addEventListener('click', ()=> toggleCart(true));

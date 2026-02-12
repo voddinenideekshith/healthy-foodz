@@ -64,6 +64,16 @@ body{
   40%{transform:translateY(-8px)}
   60%{transform:translateY(-4px)}
 }
+
+/* Fly-to-cart animation styles */
+.flying-img{position:fixed;pointer-events:none;z-index:9999;will-change:transform,opacity;transition:transform .72s cubic-bezier(.22,.9,.3,1), opacity .6s ease}
+.cart-toggle.pulse{animation:cartPulse .48s ease}
+@keyframes cartPulse{
+  0%{transform:scale(1)}
+  30%{transform:scale(1.14)}
+  60%{transform:scale(0.95)}
+  100%{transform:scale(1)}
+}
 .cart{position:fixed;right:-420px;top:80px;width:380px;background:#fff;height:70vh;border-radius:12px;box-shadow:0 30px 60px rgba(15,23,42,0.12);transition:right .28s ease;padding:12px;z-index:62;display:flex;flex-direction:column}
 .cart.open{right:18px}
 .cart-header{display:flex;justify-content:space-between;align-items:center}
