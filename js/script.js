@@ -79,11 +79,29 @@ function animateFlyToCart(card){
       fly.style.transitionTimingFunction = 'cubic-bezier(.22,.9,.3,1)';
     });
 
-    // cleanup and pulse cart
+    // cleanup and show +1 badge, pulse & shine cart
     fly.addEventListener('transitionend', ()=>{
       fly.remove();
+      // pulse
       cartToggle.classList.add('pulse');
       setTimeout(()=> cartToggle.classList.remove('pulse'), 520);
+      // shine/glow
+      cartToggle.classList.add('shine');
+      setTimeout(()=> cartToggle.classList.remove('shine'), 900);
+      // +1 badge near cart
+      const plus = document.createElement('div');
+      plus.className = 'cart-plus';
+      plus.textContent = '+1';
+      // position near cart center
+      const px = cartRect.left + cartRect.width/2;
+      const py = cartRect.top - 6;
+      plus.style.left = (px - 18) + 'px';
+      plus.style.top = (py - 8) + 'px';
+      document.body.appendChild(plus);
+      // trigger animation
+      requestAnimationFrame(()=> plus.classList.add('show'));
+      // remove after animation
+      setTimeout(()=> plus.remove(), 1000);
     }, {once:true});
   }catch(e){console.error('fly animation error', e)}
 }
