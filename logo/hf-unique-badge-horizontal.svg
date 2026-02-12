@@ -1,0 +1,82 @@
+<svg width="480" height="110" viewBox="0 0 480 110" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1h" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a6b3c"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+    <linearGradient id="g2h" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#55d98d"/>
+    </linearGradient>
+    <linearGradient id="goldh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8a84b"/>
+      <stop offset="100%" style="stop-color:#f0d060"/>
+    </linearGradient>
+    <linearGradient id="creamh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fdf9"/>
+      <stop offset="100%" style="stop-color:#eaf7ef"/>
+    </linearGradient>
+    <filter id="sh">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Badge circle (icon) -->
+  <circle cx="55" cy="55" r="50" fill="#1a6b3c" filter="url(#sh)"/>
+  <circle cx="55" cy="55" r="44" fill="url(#creamh)"/>
+  <circle cx="55" cy="55" r="40" fill="none" stroke="#1a6b3c" stroke-width="1.5"/>
+  <circle cx="55" cy="55" r="36" fill="none" stroke="#1a6b3c" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Diamond ornaments -->
+  <g transform="translate(55,16)"><rect x="-3" y="-3" width="6" height="6" fill="#1a6b3c" transform="rotate(45)"/><circle cx="0" cy="0" r="1.5" fill="url(#goldh)"/></g>
+  <g transform="translate(55,94)"><rect x="-3" y="-3" width="6" height="6" fill="#1a6b3c" transform="rotate(45)"/><circle cx="0" cy="0" r="1.5" fill="url(#goldh)"/></g>
+  <g transform="translate(16,55)"><rect x="-3" y="-3" width="6" height="6" fill="#1a6b3c" transform="rotate(45)"/><circle cx="0" cy="0" r="1.5" fill="url(#goldh)"/></g>
+  <g transform="translate(94,55)"><rect x="-3" y="-3" width="6" height="6" fill="#1a6b3c" transform="rotate(45)"/><circle cx="0" cy="0" r="1.5" fill="url(#goldh)"/></g>
+
+  <!-- Negative space H leaf icon (scaled down) -->
+  <g transform="translate(55,55)" filter="url(#sh)">
+    <path d="M -16,-24 C -24,-17 -26,-4 -23,6 C -21,16 -16,22 -12,24 C -7,25 -4,22 -3,18 C -2,13 -4,8 -5,3 C -6,-1 -5,-5 -7,-10 C -9,-14 -12,-18 -16,-24 Z" fill="url(#g1h)"/>
+    <path d="M 16,-24 C 24,-17 26,-4 23,6 C 21,16 16,22 12,24 C 7,25 4,22 3,18 C 2,13 4,8 5,3 C 6,-1 5,-5 7,-10 C 9,-14 12,-18 16,-24 Z" fill="url(#g1h)"/>
+    <rect x="-15" y="-4" width="30" height="8" rx="4" fill="url(#g1h)"/>
+    <!-- Negative space cutouts -->
+    <path d="M -12,-18 C -17,-12 -19,-3 -17,5 C -15,12 -11,17 -8,18 C -5,19 -3,16 -3,12 C -2,9 -4,5 -5,1 C -6,-3 -5,-7 -7,-10 C -9,-13 -11,-15 -12,-18 Z" fill="url(#creamh)"/>
+    <path d="M 12,-18 C 17,-12 19,-3 17,5 C 15,12 11,17 8,18 C 5,19 3,16 3,12 C 2,9 4,5 5,1 C 6,-3 5,-7 7,-10 C 9,-13 11,-15 12,-18 Z" fill="url(#creamh)"/>
+    <rect x="-14" y="-3" width="9" height="6" rx="3" fill="url(#creamh)"/>
+    <rect x="5" y="-3" width="9" height="6" rx="3" fill="url(#creamh)"/>
+    <!-- Stems -->
+    <path d="M -16,-24 Q -18,-29 -15,-30 Q -13,-27 -16,-24 Z" fill="url(#g2h)"/>
+    <path d="M 16,-24 Q 18,-29 15,-30 Q 13,-27 16,-24 Z" fill="url(#g2h)"/>
+  </g>
+
+  <!-- Vertical gold divider -->
+  <line x1="118" y1="18" x2="118" y2="92" stroke="url(#goldh)" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Brand name - big elegant -->
+  <text x="140" y="46"
+    font-family="'Georgia', serif"
+    font-size="36"
+    font-weight="700"
+    fill="#1a6b3c"
+    font-style="italic"
+    letter-spacing="1">Healthy Foodz</text>
+
+  <!-- Divider line under name -->
+  <line x1="140" y1="56" x2="435" y2="56" stroke="url(#goldh)" stroke-width="1" opacity="0.4"/>
+
+  <!-- Tagline + location row -->
+  <text x="140" y="72"
+    font-family="'Georgia', serif"
+    font-size="11"
+    fill="#27ae60"
+    font-style="italic"
+    letter-spacing="3.5">Fresh  •  Natural  •  Healthy</text>
+
+  <text x="140" y="88"
+    font-family="'Georgia', serif"
+    font-size="9"
+    fill="#6b8c74"
+    letter-spacing="2.5">CLOUD KITCHEN  —  HAYATH NAGAR, HYDERABAD</text>
+</svg>

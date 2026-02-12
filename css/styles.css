@@ -34,6 +34,10 @@ body{
 .btn-outline{background:transparent;border:1px solid #E6E6E6;padding:8px 12px;color:var(--green)}
 .btn-ghost{background:transparent;color:var(--muted)}
 .hero-visual img{width:100%;height:auto;border-radius:14px;box-shadow:var(--shadow)}
+.hero-visual{position:relative}
+.hero-badge{position:absolute;right:24px;top:24px;width:140px;opacity:0.98;box-shadow:0 20px 40px rgba(15,23,42,0.12);border-radius:12px}
+.brand-link{display:inline-block}
+.brand-logo{height:44px;width:auto;display:block}
 .section{padding:22px 0}
 .section-title{font-size:1.15rem;margin:0 0 8px}
 .menu-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:14px}

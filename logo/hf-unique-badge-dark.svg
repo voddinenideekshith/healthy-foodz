@@ -1,0 +1,169 @@
+<svg width="420" height="440" viewBox="0 0 420 440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2b18"/>
+      <stop offset="100%" style="stop-color:#1a4731"/>
+    </linearGradient>
+    <linearGradient id="g2d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#55d98d"/>
+    </linearGradient>
+    <linearGradient id="goldd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8a84b"/>
+      <stop offset="100%" style="stop-color:#f0d060"/>
+    </linearGradient>
+    <linearGradient id="leafd" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#1a6b3c"/>
+    </linearGradient>
+    <filter id="glowGreen">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="0" dy="0"/>
+      <feFlood flood-color="#2ecc71" result="color"/>
+      <feComposite in="color" in2="offsetblur" operator="in"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="deepd">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rich dark background -->
+  <rect width="420" height="440" rx="22" fill="url(#g1d)"/>
+
+  <!-- Subtle radial glow at center -->
+  <radialGradient id="centerGlow" cx="50%" cy="44%" r="40%">
+    <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:0.08"/>
+    <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:0"/>
+  </radialGradient>
+  <rect width="420" height="440" rx="22" fill="url(#centerGlow)"/>
+
+  <!-- OUTER BADGE RING -->
+  <circle cx="210" cy="195" r="165" fill="none" stroke="url(#g2d)" stroke-width="3.5" filter="url(#glowGreen)"/>
+  <circle cx="210" cy="195" r="158" fill="none" stroke="url(#g2d)" stroke-width="1" opacity="0.3"/>
+  <circle cx="210" cy="195" r="148" fill="none" stroke="url(#goldd)" stroke-width="1" opacity="0.25"/>
+
+  <!-- Badge notch ornaments -->
+  <g transform="translate(210,52)">
+    <polygon points="0,-10 5,-3 10,3 0,1 -10,3 -5,-3" fill="#2ecc71" opacity="0.8"/>
+    <circle cx="0" cy="0" r="4" fill="url(#goldd)"/>
+  </g>
+  <g transform="translate(210,338)">
+    <polygon points="0,10 5,3 10,-3 0,-1 -10,-3 -5,3" fill="#2ecc71" opacity="0.8"/>
+    <circle cx="0" cy="0" r="4" fill="url(#goldd)"/>
+  </g>
+  <g transform="translate(62,195)">
+    <polygon points="-10,0 -3,5 3,10 1,0 3,-10 -3,-5" fill="#2ecc71" opacity="0.8"/>
+    <circle cx="0" cy="0" r="4" fill="url(#goldd)"/>
+  </g>
+  <g transform="translate(358,195)">
+    <polygon points="10,0 3,5 -3,10 -1,0 -3,-10 3,-5" fill="#2ecc71" opacity="0.8"/>
+    <circle cx="0" cy="0" r="4" fill="url(#goldd)"/>
+  </g>
+
+  <!-- Diamond ornaments at 45° -->
+  <g transform="translate(93,93)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#2ecc71" transform="rotate(45)" opacity="0.7"/>
+    <circle cx="0" cy="0" r="2" fill="url(#goldd)"/>
+  </g>
+  <g transform="translate(327,93)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#2ecc71" transform="rotate(45)" opacity="0.7"/>
+    <circle cx="0" cy="0" r="2" fill="url(#goldd)"/>
+  </g>
+  <g transform="translate(93,297)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#2ecc71" transform="rotate(45)" opacity="0.7"/>
+    <circle cx="0" cy="0" r="2" fill="url(#goldd)"/>
+  </g>
+  <g transform="translate(327,297)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#2ecc71" transform="rotate(45)" opacity="0.7"/>
+    <circle cx="0" cy="0" r="2" fill="url(#goldd)"/>
+  </g>
+
+  <!-- Arc text top -->
+  <path id="topArcD" d="M 75,195 A 135,135 0 0,1 345,195" fill="none"/>
+  <text font-family="'Georgia', serif" font-size="18" font-weight="700" fill="#2ecc71" letter-spacing="6">
+    <textPath href="#topArcD" startOffset="10%">HEALTHY  FOODZ</textPath>
+  </text>
+
+  <!-- Arc text bottom -->
+  <path id="bottomArcD" d="M 88,195 A 122,122 0 0,0 332,195" fill="none"/>
+  <text font-family="'Georgia', serif" font-size="13" font-weight="500" fill="url(#goldd)" letter-spacing="5">
+    <textPath href="#bottomArcD" startOffset="12%">CLOUD  KITCHEN  •  HAYATH  NAGAR</textPath>
+  </text>
+
+  <!-- Gold dividers -->
+  <line x1="100" y1="135" x2="320" y2="135" stroke="url(#goldd)" stroke-width="1.5" opacity="0.5"/>
+  <line x1="110" y1="258" x2="310" y2="258" stroke="url(#goldd)" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- NEGATIVE SPACE H LEAF ICON -->
+  <g transform="translate(210,195)" filter="url(#deepd)">
+    <!-- Left leaf -->
+    <path d="M -38,-55 C -55,-40 -60,-10 -55,15 C -50,38 -38,52 -28,55 C -18,58 -10,52 -8,42 C -6,32 -10,18 -12,8 C -14,-2 -12,-12 -16,-22 C -20,-32 -28,-42 -38,-55 Z"
+      fill="url(#leafd)" filter="url(#glowGreen)"/>
+    <!-- Right leaf -->
+    <path d="M 38,-55 C 55,-40 60,-10 55,15 C 50,38 38,52 28,55 C 18,58 10,52 8,42 C 6,32 10,18 12,8 C 14,-2 12,-12 16,-22 C 20,-32 28,-42 38,-55 Z"
+      fill="url(#leafd)" filter="url(#glowGreen)"/>
+    <!-- Crossbar -->
+    <rect x="-36" y="-8" width="72" height="16" rx="8" fill="url(#leafd)"/>
+
+    <!-- Negative space cutouts - dark bg shows through -->
+    <path d="M -30,-40 C -40,-28 -44,-8 -40,12 C -36,28 -26,40 -20,42 C -14,44 -10,38 -9,30 C -8,22 -11,12 -13,4 C -15,-6 -14,-16 -18,-24 C -22,-32 -28,-36 -30,-40 Z"
+      fill="url(#g1d)"/>
+    <path d="M 30,-40 C 40,-28 44,-8 40,12 C 36,28 26,40 20,42 C 14,44 10,38 9,30 C 8,22 11,12 13,4 C 15,-6 14,-16 18,-24 C 22,-32 28,-36 30,-40 Z"
+      fill="url(#g1d)"/>
+    <rect x="-34" y="-6" width="20" height="12" rx="6" fill="url(#g1d)"/>
+    <rect x="14" y="-6" width="20" height="12" rx="6" fill="url(#g1d)"/>
+
+    <!-- Veins -->
+    <path d="M -24,-36 Q -32,-18 -28,10 Q -22,28 -18,38" fill="none" stroke="#55d98d" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+    <path d="M 24,-36 Q 32,-18 28,10 Q 22,28 18,38" fill="none" stroke="#55d98d" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- Stems -->
+    <path d="M -38,-55 Q -42,-65 -36,-68 Q -32,-62 -38,-55 Z" fill="#55d98d"/>
+    <line x1="-38" y1="-55" x2="-37" y2="-67" stroke="#2ecc71" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 38,-55 Q 42,-65 36,-68 Q 32,-62 38,-55 Z" fill="#55d98d"/>
+    <line x1="38" y1="-55" x2="37" y2="-67" stroke="#2ecc71" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Apple accent -->
+    <g transform="translate(-60,0)">
+      <circle cx="0" cy="0" r="9" fill="#e74c3c" filter="url(#glowGreen)"/>
+      <ellipse cx="-2" cy="-2" rx="3" ry="4" fill="white" opacity="0.2" transform="rotate(-20)"/>
+      <path d="M 0,-9 Q 1,-14 3,-12" fill="none" stroke="#5d4037" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M 2,-12 Q 5,-15 6,-11 Q 4,-10 2,-12 Z" fill="#2ecc71"/>
+    </g>
+    <!-- Lemon accent -->
+    <g transform="translate(60,0)">
+      <ellipse cx="0" cy="0" rx="10" ry="8" fill="#f9e04b" filter="url(#glowGreen)"/>
+      <ellipse cx="9" cy="0" rx="2.5" ry="1.8" fill="#f0c020"/>
+      <ellipse cx="-9" cy="0" rx="2.5" ry="1.8" fill="#f0c020"/>
+      <ellipse cx="-2" cy="-2" rx="3" ry="2.5" fill="white" opacity="0.25"/>
+    </g>
+
+    <!-- Gold dots -->
+    <circle cx="-50" cy="-30" r="2.5" fill="url(#goldd)" opacity="0.8"/>
+    <circle cx="50" cy="-30" r="2.5" fill="url(#goldd)" opacity="0.8"/>
+    <circle cx="-50" cy="30" r="2.5" fill="url(#goldd)" opacity="0.8"/>
+    <circle cx="50" cy="30" r="2.5" fill="url(#goldd)" opacity="0.8"/>
+  </g>
+
+  <!-- Tagline -->
+  <text x="210" y="390"
+    font-family="'Georgia', serif"
+    font-size="15"
+    fill="url(#g2d)"
+    text-anchor="middle"
+    font-style="italic"
+    letter-spacing="4"
+    opacity="0.9">Fresh  •  Natural  •  Healthy</text>
+
+  <g transform="translate(78,384) rotate(-40)">
+    <path d="M 0,0 Q -5,-7 -2,-12 Q 2,-7 0,0 Z" fill="#2ecc71" opacity="0.6"/>
+  </g>
+  <g transform="translate(342,384) rotate(40)">
+    <path d="M 0,0 Q 5,-7 2,-12 Q -2,-7 0,0 Z" fill="#2ecc71" opacity="0.6"/>
+  </g>
+</svg>

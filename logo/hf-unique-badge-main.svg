@@ -1,0 +1,230 @@
+<svg width="420" height="440" viewBox="0 0 420 440" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Primary green gradient -->
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a6b3c"/>
+      <stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+    <!-- Accent lime gradient -->
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71"/>
+      <stop offset="100%" style="stop-color:#55d98d"/>
+    </linearGradient>
+    <!-- Warm gold -->
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8a84b"/>
+      <stop offset="100%" style="stop-color:#f0d060"/>
+    </linearGradient>
+    <!-- Cream bg -->
+    <linearGradient id="cream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fdf9"/>
+      <stop offset="100%" style="stop-color:#eaf7ef"/>
+    </linearGradient>
+    <filter id="deep">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="crisp">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="0" dy="1.5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--   OUTER BADGE RING — thick dark green  -->
+  <!-- ══════════════════════════════════════ -->
+  <circle cx="210" cy="195" r="165" fill="#1a6b3c" filter="url(#deep)"/>
+  <!-- Cream inner fill -->
+  <circle cx="210" cy="195" r="155" fill="url(#cream)"/>
+  <!-- Decorative double ring -->
+  <circle cx="210" cy="195" r="148" fill="none" stroke="#1a6b3c" stroke-width="2.5"/>
+  <circle cx="210" cy="195" r="140" fill="none" stroke="#1a6b3c" stroke-width="1" opacity="0.4"/>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--   VINTAGE BADGE NOTCH DETAILS (top & bottom)  -->
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- Top center notch ornament -->
+  <g transform="translate(210, 52)">
+    <polygon points="0,-10 5,-3 10,3 0,1 -10,3 -5,-3" fill="#1a6b3c"/>
+    <circle cx="0" cy="0" r="4" fill="url(#gold)"/>
+  </g>
+  <!-- Bottom center notch ornament -->
+  <g transform="translate(210, 338)">
+    <polygon points="0,10 5,3 10,-3 0,-1 -10,-3 -5,3" fill="#1a6b3c"/>
+    <circle cx="0" cy="0" r="4" fill="url(#gold)"/>
+  </g>
+  <!-- Left ornament -->
+  <g transform="translate(62, 195)">
+    <polygon points="-10,0 -3,5 3,10 1,0 3,-10 -3,-5" fill="#1a6b3c"/>
+    <circle cx="0" cy="0" r="4" fill="url(#gold)"/>
+  </g>
+  <!-- Right ornament -->
+  <g transform="translate(358, 195)">
+    <polygon points="10,0 3,5 -3,10 -1,0 -3,-10 3,-5" fill="#1a6b3c"/>
+    <circle cx="0" cy="0" r="4" fill="url(#gold)"/>
+  </g>
+
+  <!-- Small diamond ornaments at 45° positions -->
+  <g transform="translate(93,93)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#1a6b3c" transform="rotate(45)"/>
+    <circle cx="0" cy="0" r="2" fill="url(#gold)"/>
+  </g>
+  <g transform="translate(327,93)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#1a6b3c" transform="rotate(45)"/>
+    <circle cx="0" cy="0" r="2" fill="url(#gold)"/>
+  </g>
+  <g transform="translate(93,297)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#1a6b3c" transform="rotate(45)"/>
+    <circle cx="0" cy="0" r="2" fill="url(#gold)"/>
+  </g>
+  <g transform="translate(327,297)">
+    <rect x="-4" y="-4" width="8" height="8" fill="#1a6b3c" transform="rotate(45)"/>
+    <circle cx="0" cy="0" r="2" fill="url(#gold)"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--   CURVED TEXT ON TOP ARC — "HEALTHY FOODZ"         -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <path id="topArc" d="M 75,195 A 135,135 0 0,1 345,195" fill="none"/>
+  <text font-family="'Georgia', serif" font-size="18" font-weight="700" fill="#1a6b3c" letter-spacing="6">
+    <textPath href="#topArc" startOffset="10%">HEALTHY  FOODZ</textPath>
+  </text>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!--   CURVED TEXT ON BOTTOM ARC — "CLOUD KITCHEN"     -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <path id="bottomArc" d="M 88,195 A 122,122 0 0,0 332,195" fill="none"/>
+  <text font-family="'Georgia', serif" font-size="13" font-weight="500" fill="#27ae60" letter-spacing="5">
+    <textPath href="#bottomArc" startOffset="12%">CLOUD  KITCHEN  •  HAYATH  NAGAR</textPath>
+  </text>
+
+  <!-- Gold divider lines -->
+  <line x1="100" y1="135" x2="320" y2="135" stroke="url(#gold)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="110" y1="258" x2="310" y2="258" stroke="url(#gold)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--   MAIN ICON: NEGATIVE SPACE LEAF + "H"             -->
+  <!--   The letter H is cleverly formed by the negative  -->
+  <!--   space between two large leaf shapes              -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <g transform="translate(210, 195)" filter="url(#deep)">
+
+    <!-- Left bold leaf — forms left pillar of H -->
+    <path d="
+      M -38,-55
+      C -55,-40 -60,-10 -55,15
+      C -50,38 -38,52 -28,55
+      C -18,58 -10,52 -8,42
+      C -6,32 -10,18 -12,8
+      C -14,-2 -12,-12 -16,-22
+      C -20,-32 -28,-42 -38,-55 Z"
+      fill="url(#g1)"/>
+
+    <!-- Right bold leaf — forms right pillar of H -->
+    <path d="
+      M 38,-55
+      C 55,-40 60,-10 55,15
+      C 50,38 38,52 28,55
+      C 18,58 10,52 8,42
+      C 6,32 10,18 12,8
+      C 14,-2 12,-12 16,-22
+      C 20,-32 28,-42 38,-55 Z"
+      fill="url(#g1)"/>
+
+    <!-- CENTER CROSSBAR of H — solid green bar connecting the two leaves -->
+    <!-- This is the "negative space" trick: bar sits between the two leaves -->
+    <rect x="-36" y="-8" width="72" height="16" rx="8" fill="url(#g1)"/>
+
+    <!-- ── NEGATIVE SPACE cutouts inside each leaf to reveal cream bg ── -->
+    <!-- Left leaf inner cutout (creates the hollow look, H left vertical) -->
+    <path d="
+      M -30,-40
+      C -40,-28 -44,-8 -40,12
+      C -36,28 -26,40 -20,42
+      C -14,44 -10,38 -9,30
+      C -8,22 -11,12 -13,4
+      C -15,-6 -14,-16 -18,-24
+      C -22,-32 -28,-36 -30,-40 Z"
+      fill="url(#cream)"/>
+
+    <!-- Right leaf inner cutout -->
+    <path d="
+      M 30,-40
+      C 40,-28 44,-8 40,12
+      C 36,28 26,40 20,42
+      C 14,44 10,38 9,30
+      C 8,22 11,12 13,4
+      C 15,-6 14,-16 18,-24
+      C 22,-32 28,-36 30,-40 Z"
+      fill="url(#cream)"/>
+
+    <!-- Crossbar negative space — two gaps either side of crossbar -->
+    <!-- Left gap of crossbar -->
+    <rect x="-34" y="-6" width="20" height="12" rx="6" fill="url(#cream)"/>
+    <!-- Right gap of crossbar -->
+    <rect x="14" y="-6" width="20" height="12" rx="6" fill="url(#cream)"/>
+
+    <!-- ── LEAF VEIN DETAILS (subtle texture) ── -->
+    <!-- Left leaf vein -->
+    <path d="M -24,-36 Q -32,-18 -28,10 Q -22,28 -18,38"
+      fill="none" stroke="url(#g2)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+    <!-- Right leaf vein -->
+    <path d="M 24,-36 Q 32,-18 28,10 Q 22,28 18,38"
+      fill="none" stroke="url(#g2)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+
+    <!-- ── SMALL LEAF STEMS at top of each leaf ── -->
+    <!-- Left stem -->
+    <path d="M -38,-55 Q -42,-65 -36,-68 Q -32,-62 -38,-55 Z" fill="url(#g2)"/>
+    <line x1="-38" y1="-55" x2="-37" y2="-67" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Right stem -->
+    <path d="M 38,-55 Q 42,-65 36,-68 Q 32,-62 38,-55 Z" fill="url(#g2)"/>
+    <line x1="38" y1="-55" x2="37" y2="-67" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- ── SMALL FRUIT ACCENTS beside the H icon ── -->
+    <!-- Left: tiny apple -->
+    <g transform="translate(-60, 0)" filter="url(#crisp)">
+      <circle cx="0" cy="0" r="9" fill="#e74c3c"/>
+      <ellipse cx="-2" cy="-2" rx="3" ry="4" fill="white" opacity="0.18" transform="rotate(-20)"/>
+      <path d="M 0,-9 Q 1,-14 3,-12" fill="none" stroke="#5d4037" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M 2,-12 Q 5,-15 6,-11 Q 4,-10 2,-12 Z" fill="#2ecc71"/>
+    </g>
+    <!-- Right: tiny lemon -->
+    <g transform="translate(60, 0)" filter="url(#crisp)">
+      <ellipse cx="0" cy="0" rx="10" ry="8" fill="#f9e04b"/>
+      <ellipse cx="9" cy="0" rx="2.5" ry="1.8" fill="#f0c020"/>
+      <ellipse cx="-9" cy="0" rx="2.5" ry="1.8" fill="#f0c020"/>
+      <ellipse cx="-2" cy="-2" rx="3" ry="2.5" fill="white" opacity="0.25"/>
+    </g>
+
+    <!-- ── GOLD DOT ACCENTS ── -->
+    <circle cx="-50" cy="-30" r="2.5" fill="url(#gold)" opacity="0.7"/>
+    <circle cx="50" cy="-30" r="2.5" fill="url(#gold)" opacity="0.7"/>
+    <circle cx="-50" cy="30" r="2.5" fill="url(#gold)" opacity="0.7"/>
+    <circle cx="50" cy="30" r="2.5" fill="url(#gold)" opacity="0.7"/>
+  </g>
+
+  <!-- ══════════════════════════ -->
+  <!--   TAGLINE BELOW BADGE     -->
+  <!-- ══════════════════════════ -->
+  <text x="210" y="390"
+    font-family="'Georgia', serif"
+    font-size="15"
+    font-weight="400"
+    fill="#1a6b3c"
+    text-anchor="middle"
+    font-style="italic"
+    letter-spacing="4"
+    opacity="0.85">Fresh  •  Natural  •  Healthy</text>
+
+  <!-- Tiny leaf bookends for tagline -->
+  <g transform="translate(78,384) rotate(-40)">
+    <path d="M 0,0 Q -5,-7 -2,-12 Q 2,-7 0,0 Z" fill="#27ae60" opacity="0.55"/>
+  </g>
+  <g transform="translate(342,384) rotate(40)">
+    <path d="M 0,0 Q 5,-7 2,-12 Q -2,-7 0,0 Z" fill="#27ae60" opacity="0.55"/>
+  </g>
+</svg>
