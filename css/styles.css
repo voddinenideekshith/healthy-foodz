@@ -42,6 +42,29 @@ body{
 .section{padding:22px 0}
 .section-title{font-size:1.15rem;margin:0 0 8px}
 .menu-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:14px}
+.menu{position:relative;overflow:visible}
+
+/* Decorative background logo for the menu section (desktop only) */
+.menu::before{
+  content:"";
+  position:absolute;
+  right:48px;
+  top:-40px;
+  width:380px;
+  height:380px;
+  background-image:url('/logo/hf-unique-badge-main.svg');
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center center;
+  opacity:0.10;
+  pointer-events:none;
+  transform:translateY(0);
+  filter:drop-shadow(0 18px 40px rgba(15,23,42,0.06));
+  z-index:1;
+}
+
+/* keep menu content above the decorative logo */
+.menu > .container{position:relative;z-index:2}
 .card{display:flex;gap:12px;background:#fff;border-radius:12px;padding:10px;align-items:center;box-shadow:var(--shadow);transition:transform .18s ease}
 .card:hover{transform:translateY(-6px)}
 .card img{width:110px;height:90px;object-fit:cover;border-radius:10px}
@@ -116,6 +139,10 @@ body{
 @media(min-width:720px){
   .hero-inner{grid-template-columns:1fr 420px}
   .menu-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:999px){
+  /* hide large background logo on smaller screens */
+  .menu::before{display:none}
 }
 @media(min-width:1000px){
   .menu-grid{grid-template-columns:repeat(3,1fr)}
