@@ -84,10 +84,10 @@ function animateFlyToCart(card){
       fly.remove();
       // pulse (longer to match slower fly animation)
       cartToggle.classList.add('pulse');
-      setTimeout(()=> cartToggle.classList.remove('pulse'), 1200);
+      setTimeout(()=> cartToggle.classList.remove('pulse'), 3000);
       // shine/glow (longer)
       cartToggle.classList.add('shine');
-      setTimeout(()=> cartToggle.classList.remove('shine'), 1600);
+      setTimeout(()=> cartToggle.classList.remove('shine'), 3200);
       // +1 badge near cart
       const plus = document.createElement('div');
       plus.className = 'cart-plus';
@@ -101,7 +101,7 @@ function animateFlyToCart(card){
       // trigger animation
       requestAnimationFrame(()=> plus.classList.add('show'));
       // remove after animation (allow longer time for slower sequence)
-      setTimeout(()=> plus.remove(), 1800);
+      setTimeout(()=> plus.remove(), 3400);
     }, {once:true});
   }catch(e){console.error('fly animation error', e)}
 }

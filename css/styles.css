@@ -104,7 +104,7 @@ body{
 }
 
 /* Fly-to-cart animation styles */
-.flying-img{position:fixed;pointer-events:none;z-index:9999;will-change:transform,opacity;transition:transform 1.6s cubic-bezier(.22,.9,.3,1), opacity 1s ease}
+.flying-img{position:fixed;pointer-events:none;z-index:9999;will-change:transform,opacity;transition:transform 3s cubic-bezier(.22,.9,.3,1), opacity 2.5s ease}
 .cart-toggle.pulse{animation:cartPulse .48s ease}
 @keyframes cartPulse{
   0%{transform:scale(1)}
@@ -114,7 +114,7 @@ body{
 }
 
 /* faster rotate+fade variant for flying image */
-.flying-img.rotate{transition:transform 1.5s cubic-bezier(.22,.9,.3,1), opacity 1s ease}
+.flying-img.rotate{transition:transform 2.8s cubic-bezier(.22,.9,.3,1), opacity 2.5s ease}
 .flying-img.rotate.animate{transform-origin:center center;}
 
 /* +1 badge that appears near cart */
