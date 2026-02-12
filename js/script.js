@@ -235,6 +235,32 @@ function init(){
   document.getElementById('callBtn').setAttribute('href', callHref);
   document.getElementById('callCheckout').setAttribute('href', callHref);
 
+  // --- Subscription promo bar (WhatsApp contact) ---
+  const subBar = document.getElementById('subscriptionBar');
+  const subClose = document.getElementById('subscriptionBarClose');
+  const subWA = document.getElementById('subscribeWhatsApp');
+  try{
+    // hide if user previously closed
+    if(localStorage.getItem('hf_sub_bar_closed') === '1'){
+      if(subBar) subBar.classList.add('hidden');
+    } else {
+      if(subBar) subBar.classList.remove('hidden');
+    }
+    if(subClose){
+      subClose.addEventListener('click', ()=>{
+        if(subBar) subBar.classList.add('hidden');
+        localStorage.setItem('hf_sub_bar_closed','1');
+      });
+    }
+    if(subWA){
+      // Prefill a short message for subscription inquiry
+      const msg = `Hello Healthy Foodz, I'm interested in your 30-day subscription plans. Please share details and pricing. My delivery address is: `;
+      subWA.setAttribute('href', `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`);
+      subWA.setAttribute('target','_blank');
+      subWA.setAttribute('rel','noopener');
+    }
+  }catch(e){console.warn('subscription bar init error', e)}
+
 }
 
 document.addEventListener('DOMContentLoaded', init);

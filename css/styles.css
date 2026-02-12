@@ -167,3 +167,22 @@ body{
   .menu-grid{grid-template-columns:repeat(3,1fr)}
   .headline{font-size:2rem}
 }
+
+/* Subscription promo bar (fixed bottom) */
+.subscription-bar{position:fixed;left:0;right:0;bottom:12px;z-index:120;display:flex;justify-content:center}
+.subscription-bar .sub-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 18px 40px rgba(15,23,42,0.08);max-width:980px;width:calc(100% - 32px)}
+.subscription-bar .sub-left{display:flex;flex-direction:column}
+.subscription-bar .sub-left strong{color:var(--green);font-weight:700}
+.subscription-bar .sub-note{color:var(--muted);font-size:0.92rem}
+.subscription-bar .sub-actions{display:flex;align-items:center;gap:8px}
+.subscription-bar .btn-primary{padding:8px 12px;border-radius:8px}
+.subscription-bar .btn-ghost{background:transparent;border:0;padding:6px 8px;font-size:1rem}
+
+@media(max-width:640px){
+  .subscription-bar{bottom:10px}
+  .subscription-bar .sub-inner{padding:10px;width:calc(100% - 20px);flex-direction:column;align-items:stretch}
+  .subscription-bar .sub-actions{justify-content:space-between}
+}
+
+/* Hide by default when user closed */
+.subscription-bar.hidden{display:none !important}
