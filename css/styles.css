@@ -42,33 +42,40 @@ body{
 .section{padding:22px 0}
 .section-title{font-size:1.15rem;margin:0 0 8px}
 .menu-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:14px}
-.menu{position:relative;overflow:visible}
+.menu{position:relative;overflow:hidden}
 
 /* Decorative background logo for the menu section (desktop only) */
 .menu::before{
   content:"";
   position:absolute;
-  right:48px;
-  top:-40px;
-  width:380px;
-  height:380px;
-  background-image:url('/logo/hf-unique-badge-main.svg');
+  left:50%;
+  right:auto;
+  top:-20px;
+  width:320px;
+  height:320px;
+  background-image:url('logo/hf-unique-badge-main.svg');
   background-size:contain;
   background-repeat:no-repeat;
   background-position:center center;
-    opacity:0.10;
-    pointer-events:none;
-    transform:translateY(0);
-    transform-origin:center center;
-    /* slow rotation + gentle pulse to add subtle motion */
-    animation: rotatePulse 28s linear infinite;
-  filter:drop-shadow(0 18px 40px rgba(15,23,42,0.06));
-  z-index:1;
+  opacity:0.10;
+  pointer-events:none;
+  transform:translateX(-50%) translateY(0);
+  transform-origin:center center;
+  /* slow travel + gentle bob and rotation to make it feel like it's moving across */
+  will-change: transform, opacity;
+  animation: rotateTravel 240s linear infinite;
+  /* keep it visually subtle and behind content */
+  filter:none;
+  z-index:0;
 }
-@keyframes rotatePulse{
-  0%{transform:translateY(0) rotate(0deg) scale(1); opacity:0.09}
-  50%{transform:translateY(0) rotate(180deg) scale(1.02); opacity:0.13}
-  100%{transform:translateY(0) rotate(360deg) scale(1); opacity:0.09}
+@keyframes rotateTravel{
+  /* Travel horizontally between -60% and -30% (relative to element center)
+     with a slow rotation and gentle vertical bob to mimic travelling motion */
+  0%{transform:translateX(-60%) translateY(0) rotate(0deg) scale(0.98); opacity:0.07}
+  25%{transform:translateX(-40%) translateY(-6px) rotate(90deg) scale(1.01); opacity:0.11}
+  50%{transform:translateX(-50%) translateY(0) rotate(180deg) scale(1.03); opacity:0.14}
+  75%{transform:translateX(-30%) translateY(6px) rotate(270deg) scale(1.01); opacity:0.11}
+  100%{transform:translateX(-60%) translateY(0) rotate(360deg) scale(0.98); opacity:0.07}
 }
 
 /* keep menu content above the decorative logo */
@@ -97,7 +104,7 @@ body{
 }
 
 /* Fly-to-cart animation styles */
-.flying-img{position:fixed;pointer-events:none;z-index:9999;will-change:transform,opacity;transition:transform .72s cubic-bezier(.22,.9,.3,1), opacity .6s ease}
+.flying-img{position:fixed;pointer-events:none;z-index:9999;will-change:transform,opacity;transition:transform 1.6s cubic-bezier(.22,.9,.3,1), opacity 1s ease}
 .cart-toggle.pulse{animation:cartPulse .48s ease}
 @keyframes cartPulse{
   0%{transform:scale(1)}
@@ -107,7 +114,7 @@ body{
 }
 
 /* faster rotate+fade variant for flying image */
-.flying-img.rotate{transition:transform .7s cubic-bezier(.22,.9,.3,1), opacity .5s ease}
+.flying-img.rotate{transition:transform 1.5s cubic-bezier(.22,.9,.3,1), opacity 1s ease}
 .flying-img.rotate.animate{transform-origin:center center;}
 
 /* +1 badge that appears near cart */
