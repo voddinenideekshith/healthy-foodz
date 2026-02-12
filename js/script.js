@@ -26,7 +26,7 @@ function renderMenu(){
     const card = document.createElement('article');
     card.className = 'card';
     card.innerHTML = `
-      <img src="${item.img}&w=800&q=80" alt="${item.name}">
+      <img src="${item.img}" alt="${item.name}" loading="lazy">
       <div class="card-body">
         <h5 class="item-title">${item.name}</h5>
         <p class="item-desc">${item.desc}</p>
