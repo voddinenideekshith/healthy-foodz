@@ -1,5 +1,8 @@
 const PHONE_NUMBER = '918985562963'; // WhatsApp number (country code + number, no +)
 const CALL_NUMBER = '+918985562963'; // Phone number with +country code
+// Platform integration URLs — replace with your actual restaurant pages
+const SWIGGY_URL = 'https://www.swiggy.com/';
+const ZOMATO_URL = 'https://www.zomato.com/';
 
 const menuData = [
   {id: 'fruit-mix', name: 'Fruit Mix', price: 120, desc: 'Seasonal fruits, chopped and served fresh.', img: 'images/fruit-mix.png'},
@@ -36,6 +39,8 @@ function renderMenu(){
         <button class="btn btn-primary add" data-id="${item.id}">Add to Cart</button>
       </div>
     `;
+    // prepare for reveal animation
+    card.classList.add('reveal');
     grid.appendChild(card);
   });
 }
@@ -116,6 +121,27 @@ function sendEmailOrder(){
 function init(){
   renderMenu();
   updateCartUI();
+
+  // Set platform links (edit SWIGGY_URL / ZOMATO_URL above)
+  const s = document.getElementById('swiggyLink'); if(s) s.href = SWIGGY_URL;
+  const z = document.getElementById('zomatoLink'); if(z) z.href = ZOMATO_URL;
+
+  // add reveal animation to menu cards with IntersectionObserver
+  const observer = new IntersectionObserver((entries, obs)=>{
+    entries.forEach((e, idx)=>{
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+        // stagger by small delay
+        e.target.style.transitionDelay = (e.target.dataset.index || '0') + 's';
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  const cards = document.querySelectorAll('.menu-grid .card.reveal');
+  cards.forEach((c,i)=>{ c.dataset.index = (i*0.06).toFixed(2); observer.observe(c); });
+
+  // animate floating WhatsApp button gently
+  const fw = document.querySelector('.floating-whatsapp'); if(fw) fw.classList.add('bounce');
 
   document.getElementById('menuGrid').addEventListener('click', e=>{
     const btn = e.target.closest('.add'); if(!btn) return; addToCart(btn.dataset.id);
