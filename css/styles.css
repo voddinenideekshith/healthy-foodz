@@ -60,9 +60,9 @@ body{
 .cart-actions{display:flex;gap:8px;margin-top:8px}
 .platform-list{display:flex;gap:18px;align-items:center}
 .platform img{height:36px}
-/* Tint external monochrome SVG icons to match brand colors */
-.platform[aria-label="Swiggy"] img{filter:invert(63%) sepia(81%) saturate(363%) hue-rotate(331deg) brightness(98%) contrast(101%)}
-.platform[aria-label="Zomato"] img{filter:invert(22%) sepia(93%) saturate(7492%) hue-rotate(341deg) brightness(100%) contrast(109%)}
+/* For inline SVG icons use .platform-icon to control size and vertical alignment */
+.platform-icon{height:36px;width:36px;vertical-align:middle}
+.platform-icons img{height:32px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
 
 /* Responsive */
