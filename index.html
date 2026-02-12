@@ -3,24 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Healthy Foodz — fresh, natural and healthy meals delivered in Hayath Nagar Khalsa, Hyderabad. Order via WhatsApp, phone, Swiggy or Zomato." />
-    <title>Healthy Foodz — Fresh • Natural • Healthy</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <meta name="theme-color" content="#ECF9F0">
+    <meta
+      name="description"
+      content="Healthy Foodz - fresh, natural and healthy meals delivered in Hayath Nagar Khalsa, Hyderabad. Order via WhatsApp, phone, Swiggy or Zomato."
+    />
+    <title>Healthy Foodz - Fresh &bull; Natural &bull; Healthy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="theme-color" content="#f7ecde" />
   </head>
-  <body>
+  <body class="is-loading">
+    <div class="page-aurora" aria-hidden="true"></div>
+    <div class="page-grain" aria-hidden="true"></div>
+
     <header class="site-header">
       <div class="container header-inner">
         <div class="brand">
           <a href="/" class="brand-link">
-            <img src="logo/hf-unique-badge-horizontal.svg" alt="Healthy Foodz" class="brand-logo" loading="lazy">
+            <img src="logo/hf-unique-badge-horizontal.svg" alt="Healthy Foodz" class="brand-logo" loading="lazy" />
           </a>
-          <p class="tag">Fresh • Natural • Healthy</p>
+          <p class="tag">Fresh &bull; Natural &bull; Healthy</p>
         </div>
-        <nav class="top-actions">
+        <nav class="top-actions" aria-label="Primary actions">
           <a href="#menu" class="btn btn-ghost">View Menu</a>
           <a href="#" id="callBtn" class="btn btn-outline">Call to Order</a>
         </nav>
@@ -28,11 +37,12 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero section">
         <div class="container hero-inner">
-          <div class="hero-content">
-            <h2 class="headline">Healthy Food, Made Fresh Every Day</h2>
-            <p class="lead">Nutritious meals &amp; drinks delivered fresh to your doorstep</p>
+          <div class="hero-content" data-reveal>
+            <p class="eyebrow">Nourish Daily</p>
+            <h1 class="headline">Healthy Food, Made Fresh Every Day</h1>
+            <p class="lead">Nutritious meals and drinks delivered fresh to your doorstep.</p>
             <div class="cta-row">
               <button id="whatsappOrder" class="btn btn-primary">Order on WhatsApp</button>
               <a href="#menu" class="btn btn-secondary">View Menu</a>
@@ -41,41 +51,57 @@
               <li><strong>Location:</strong> Hayath Nagar Khalsa, 501505, Hyderabad, Telangana</li>
               <li><strong>Service Area:</strong> 5 KM radius</li>
             </ul>
+            <div class="hero-pills">
+              <span class="hero-pill">Fresh Prep</span>
+              <span class="hero-pill">Natural Ingredients</span>
+              <span class="hero-pill">Fast Delivery</span>
+            </div>
           </div>
-          <div class="hero-visual">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Fresh healthy food" loading="lazy">
-            <img src="logo/hf-unique-badge-main.svg" alt="Healthy Foodz badge" class="hero-badge" loading="lazy">
+
+          <div class="hero-visual" data-reveal data-parallax="0.08">
+            <div class="hero-photo-shell loading">
+              <span class="img-skeleton" aria-hidden="true"></span>
+              <img
+                id="heroImage"
+                class="hero-photo"
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop"
+                alt="Fresh healthy food"
+                loading="lazy"
+              />
+            </div>
+            <img src="logo/hf-unique-badge-main.svg" alt="Healthy Foodz badge" class="hero-badge" loading="lazy" />
           </div>
         </div>
       </section>
 
-      <section id="menu" class="menu section">
+      <section id="menu" class="menu section" data-reveal>
         <div class="container">
-          <h3 class="section-title">Menu</h3>
-          <p class="section-sub">Fresh, natural and carefully prepared combinations.</p>
+          <h2 class="section-title">Seasonal Menu</h2>
+          <p class="section-sub">Fresh, natural, and carefully prepared combinations.</p>
           <div id="menuGrid" class="menu-grid">
             <!-- Menu cards injected by JS -->
           </div>
         </div>
       </section>
 
-      <section class="ordering-platforms section">
+      <section class="ordering-platforms section" data-reveal>
         <div class="container platforms-inner">
-          <h4>Ordering Platforms</h4>
+          <h2 class="section-title">Ordering Platforms</h2>
+          <p class="section-sub">Pick your favorite way to order.</p>
           <div class="platform-list">
             <a id="swiggyLink" class="platform" href="#" aria-label="Swiggy" target="_blank" rel="noopener">
-              <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" aria-hidden>
+              <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" aria-hidden="true">
                 <title>Swiggy</title>
-                <path fill="#FC8019" d="M12.034 24c-.376-.411-2.075-2.584-3.95-5.513-.547-.916-.901-1.63-.833-1.814.178-.48 3.355-.743 4.333-.308.298.132.29.307.29.409 0 .44-.022 1.619-.022 1.619a.441.441 0 1 0 .883-.002l-.005-2.939c0-.255-.278-.319-.331-.329-.511-.002-1.548-.006-2.661-.006-2.457 0-3.006.101-3.423-.172-.904-.591-2.383-4.577-2.417-6.819C3.849 4.964 5.723 2.225 8.362.868A8.13 8.13 0 0 1 12.026 0c4.177 0 7.617 3.153 8.075 7.209l.001.011c.084.981-5.321 1.189-6.39.904-.164-.044-.206-.212-.206-.284L13.5 4.996a.442.442 0 0 0-.884.002l.009 3.866a.33.33 0 0 0 .268.32l3.354-.001c1.79 0 2.542.207 3.042.588.333.254.461.739.349 1.37C18.633 16.755 12.273 23.71 12.034 24z"/>
+                <path fill="#FC8019" d="M12.034 24c-.376-.411-2.075-2.584-3.95-5.513-.547-.916-.901-1.63-.833-1.814.178-.48 3.355-.743 4.333-.308.298.132.29.307.29.409 0 .44-.022 1.619-.022 1.619a.441.441 0 1 0 .883-.002l-.005-2.939c0-.255-.278-.319-.331-.329-.511-.002-1.548-.006-2.661-.006-2.457 0-3.006.101-3.423-.172-.904-.591-2.383-4.577-2.417-6.819C3.849 4.964 5.723 2.225 8.362.868A8.13 8.13 0 0 1 12.026 0c4.177 0 7.617 3.153 8.075 7.209l.001.011c.084.981-5.321 1.189-6.39.904-.164-.044-.206-.212-.206-.284L13.5 4.996a.442.442 0 0 0-.884.002l.009 3.866a.33.33 0 0 0 .268.32l3.354-.001c1.79 0 2.542.207 3.042.588.333.254.461.739.349 1.37C18.633 16.755 12.273 23.71 12.034 24z" />
               </svg>
             </a>
             <a id="zomatoLink" class="platform" href="#" aria-label="Zomato" target="_blank" rel="noopener">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zomato.svg" alt="Zomato" loading="lazy">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zomato.svg" alt="Zomato" loading="lazy" />
             </a>
             <div class="platform direct">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path d="M12 2L12 22" stroke="#2F855A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 12L22 12" stroke="#2F855A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2L12 22" stroke="#2F855A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2 12L22 12" stroke="#2F855A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
               <span>Direct Delivery (up to 5 KM)</span>
             </div>
@@ -83,22 +109,27 @@
         </div>
       </section>
 
-      <section class="about section">
+      <section class="about section" data-reveal>
         <div class="container">
-          <h4>About Healthy Foodz</h4>
-          <p>Healthy Foodz is a cloud kitchen dedicated to providing fresh, nutritious, and hygienic food made with natural ingredients. We focus on health, taste, and quality—delivered fast to your doorstep.</p>
+          <article class="about-card">
+            <h2 class="section-title">About Healthy Foodz</h2>
+            <p>
+              Healthy Foodz is a cloud kitchen dedicated to fresh, nutritious, hygienic food made with natural ingredients.
+              We focus on health, taste, and quality delivered fast to your doorstep.
+            </p>
+          </article>
         </div>
       </section>
     </main>
 
-    <aside id="cart" class="cart">
+    <aside id="cart" class="cart" aria-label="Order cart">
       <div class="cart-header">
-        <h5>Your Order</h5>
-        <button id="closeCart" class="btn-close">✕</button>
+        <h3>Your Order</h3>
+        <button id="closeCart" class="btn-close" aria-label="Close cart">&times;</button>
       </div>
       <div id="cartItems" class="cart-items"></div>
       <div class="cart-footer">
-        <div class="cart-total">Total: <span id="cartTotal">₹0</span></div>
+        <div class="cart-total">Total: <span id="cartTotal">&#8377;0</span></div>
         <div class="cart-actions">
           <button id="whatsappCheckout" class="btn btn-primary">Order via WhatsApp</button>
           <button id="emailCheckout" class="btn btn-ghost">Order via Email</button>
@@ -107,10 +138,13 @@
       </div>
     </aside>
 
-    <button id="cartToggle" class="cart-toggle" aria-label="Open cart">🛒<span id="cartCount">0</span></button>
+    <button id="cartToggle" class="cart-toggle" aria-label="Open cart">
+      <span class="cart-icon" aria-hidden="true">&#128722;</span>
+      <span id="cartCount">0</span>
+    </button>
 
     <a id="floatingWhatsApp" class="floating-whatsapp" href="#" aria-label="WhatsApp order">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
     </a>
 
     <footer class="site-footer">
@@ -125,32 +159,31 @@
             <div>Email: <a href="mailto:deekshithvoddineni@gmail.com">deekshithvoddineni@gmail.com</a></div>
           </div>
           <div class="platform-icons">
-            <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" aria-hidden>
+            <svg class="platform-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="36" height="36" aria-hidden="true">
               <title>Swiggy</title>
-              <path fill="#FC8019" d="M12.034 24c-.376-.411-2.075-2.584-3.95-5.513-.547-.916-.901-1.63-.833-1.814.178-.48 3.355-.743 4.333-.308.298.132.29.307.29.409 0 .44-.022 1.619-.022 1.619a.441.441 0 1 0 .883-.002l-.005-2.939c0-.255-.278-.319-.331-.329-.511-.002-1.548-.006-2.661-.006-2.457 0-3.006.101-3.423-.172-.904-.591-2.383-4.577-2.417-6.819C3.849 4.964 5.723 2.225 8.362.868A8.13 8.13 0 0 1 12.026 0c4.177 0 7.617 3.153 8.075 7.209l.001.011c.084.981-5.321 1.189-6.39.904-.164-.044-.206-.212-.206-.284L13.5 4.996a.442.442 0 0 0-.884.002l.009 3.866a.33.33 0 0 0 .268.32l3.354-.001c1.79 0 2.542.207 3.042.588.333.254.461.739.349 1.37C18.633 16.755 12.273 23.71 12.034 24z"/>
+              <path fill="#FC8019" d="M12.034 24c-.376-.411-2.075-2.584-3.95-5.513-.547-.916-.901-1.63-.833-1.814.178-.48 3.355-.743 4.333-.308.298.132.29.307.29.409 0 .44-.022 1.619-.022 1.619a.441.441 0 1 0 .883-.002l-.005-2.939c0-.255-.278-.319-.331-.329-.511-.002-1.548-.006-2.661-.006-2.457 0-3.006.101-3.423-.172-.904-.591-2.383-4.577-2.417-6.819C3.849 4.964 5.723 2.225 8.362.868A8.13 8.13 0 0 1 12.026 0c4.177 0 7.617 3.153 8.075 7.209l.001.011c.084.981-5.321 1.189-6.39.904-.164-.044-.206-.212-.206-.284L13.5 4.996a.442.442 0 0 0-.884.002l.009 3.866a.33.33 0 0 0 .268.32l3.354-.001c1.79 0 2.542.207 3.042.588.333.254.461.739.349 1.37C18.633 16.755 12.273 23.71 12.034 24z" />
             </svg>
-            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zomato.svg" alt="Zomato">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zomato.svg" alt="Zomato" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
           </div>
-          <div class="copyright">© Healthy Foodz</div>
+          <div class="copyright">&copy; Healthy Foodz</div>
         </div>
       </div>
     </footer>
 
-    <script src="js/script.js?v=2" type="module"></script>
-  </body>
-</html>
-
-  <!-- Subscription promo bar: prompts user to contact via WhatsApp for 30-day plans -->
-  <div id="subscriptionBar" class="subscription-bar" role="region" aria-label="Subscription Plans">
-    <div class="container sub-inner">
-      <div class="sub-left">
-        <strong>30-Day Healthy Combo Plans</strong>
-        <span class="sub-note">Subscribe for daily delivery — save 10%. Contact us on WhatsApp for details.</span>
-      </div>
-      <div class="sub-actions">
-        <a id="subscribeWhatsApp" class="btn btn-primary" href="#">Contact on WhatsApp</a>
-        <button id="subscriptionBarClose" class="btn btn-ghost" aria-label="Close subscription bar">✕</button>
+    <div id="subscriptionBar" class="subscription-bar" role="region" aria-label="Subscription Plans">
+      <div class="container sub-inner">
+        <div class="sub-left">
+          <strong>30-Day Healthy Combo Plans</strong>
+          <span class="sub-note">Subscribe for daily delivery and save 10%. Contact us on WhatsApp for details.</span>
+        </div>
+        <div class="sub-actions">
+          <a id="subscribeWhatsApp" class="btn btn-primary" href="#">Contact on WhatsApp</a>
+          <button id="subscriptionBarClose" class="btn btn-ghost" aria-label="Close subscription bar">&times;</button>
+        </div>
       </div>
     </div>
-  </div>
+
+    <script src="js/script.js?v=3" type="module"></script>
+  </body>
+</html>
