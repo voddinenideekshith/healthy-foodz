@@ -1,0 +1,6 @@
+# Ignore temporary tmpclaude folders generated during experiments
+tmpclaude-*
+
+# Common OS/editor noise (optional)
+.DS_Store
+Thumbs.db
