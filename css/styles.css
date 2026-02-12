@@ -159,6 +159,10 @@ body{
   /* hide large background logo on smaller screens */
   .menu::before{display:none}
 }
+
+/* User requested: remove the decorative/menu background image and hero badge entirely */
+.menu::before{display:none !important}
+.hero-badge{display:none !important}
 @media(min-width:1000px){
   .menu-grid{grid-template-columns:repeat(3,1fr)}
   .headline{font-size:2rem}
